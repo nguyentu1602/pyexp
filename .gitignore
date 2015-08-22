@@ -1,2 +1,9 @@
 # ignore emacs buffer files
 *~
+
+# ignore cache files
+*.pyc
+
+# cache folder
+__pycache__/
+pyexp/__pycache__/
