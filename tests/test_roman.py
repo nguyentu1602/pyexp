@@ -96,3 +96,11 @@ class ToRomanBadInput(unittest.TestCase):
         self.assertRaises(roman.NotIntegerError, roman.to_roman, None)
         self.assertRaises(roman.NotIntegerError, roman.to_roman, 0.1)
         self.assertRaises(roman.NotIntegerError, roman.to_roman, -1.5)
+
+class RoundTripCheck(unittest.TestCase):
+
+    def test_roundtrip(self):
+        for integer in range(1, 4000): # equivalent to xrange since python3
+            numeral = roman.to_roman(integer)
+            result = roman.from_roman(numeral)
+            self.assertEqual(integer, result)
