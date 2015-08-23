@@ -35,6 +35,15 @@ def to_roman(n):
             n -= integer
     return result
 
-
 def from_roman(s):
-    pass
+    '''Convert Roman numeral to integer'''
+    result = 0
+    index = 0
+    '''iterate through the map and match numeral string from largest
+    to smallest, adding to the result once match
+    '''
+    for numeral, integer in roman_numeral_map:
+        while s[index:index+len(numeral)] == numeral:
+            result += integer
+            index += len(numeral)
+    return result
