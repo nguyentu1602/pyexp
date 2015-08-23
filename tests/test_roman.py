@@ -104,3 +104,18 @@ class RoundTripCheck(unittest.TestCase):
             numeral = roman.to_roman(integer)
             result = roman.from_roman(numeral)
             self.assertEqual(integer, result)
+
+class FromRomanBadInput(unittest.TestCase):
+
+    def test_too_many_repeated_numerals(self):
+        for item in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, item)
+
+    def test_repeated_pairs(self):
+        for item in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, item)
+
+    def test_malformed_antecedents(self):
+        for item in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                  'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, item)
