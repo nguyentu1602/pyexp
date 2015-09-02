@@ -35,3 +35,6 @@ def string_permu_hash(in_str):
     for c in in_str:
         hash_result += base ** char_to_int(c)
     return hash_result
+
+def increment_char(char, by=1):
+    return int_to_char(char_to_int(char) + 1)
