@@ -37,4 +37,23 @@ def string_permu_hash(in_str):
     return hash_result
 
 def increment_char(char, by=1):
+    '''helper function to incremnt the char by 1
+    '''
     return int_to_char(char_to_int(char) + 1)
+
+def decomp_string_from_hash(hashnum, base):
+    '''given a hash and a base, decompose the hash to give
+    back the combination of letters that made up the string
+    '''
+    result_list_tuple = []
+    current_char = 'a'
+    # emulate a do-while loop here
+    while True:
+        (div, rem) = divmod(hashnum, base)
+        hashnum = div
+        if rem > 0:
+            result_list_tuple.append((current_char, rem))
+        current_char = increment_char(current_char)
+        if hashnum == 0:
+            break
+    return result_list_tuple
