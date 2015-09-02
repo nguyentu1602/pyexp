@@ -67,4 +67,7 @@ def convert_decomp_to_string(list_tuple):
         result.append(char * num)
     return ''.join(result)
 
-def
+def sort_char_string(in_str):
+    '''sort characters in a string
+    '''
+    return ''.join(sorted(in_str))
