@@ -7,6 +7,7 @@ I will solve it in O(len(L)) time.
 For demonstration purpose, let's assume the characters
 are ASCII lowercase letters only.
 '''
+import random, string    # for testing only
 
 # Q: given a character, how to convert it into its
 # ASCII value? A: using ord() and chr()
@@ -71,3 +72,22 @@ def sort_char_string(in_str):
     '''sort characters in a string
     '''
     return ''.join(sorted(in_str))
+
+def gen_random_word(length):
+    '''generate a random string of given length from
+    ascii lowercase letters
+    '''
+    return ''.join(random.choice(string.ascii_lowercase)
+                   for i in range(length))
+
+def test_string_permu_hash(string_len=7, num_testcase=500):
+    '''automatic roundtrip testing for hashing and de-hashing
+    '''
+    base = string_len + 1
+    for i in range(num_testcase):
+        in_str = gen_random_word(string_len)
+        hash_val = string_permu_hash(in_str)
+        revert_string = convert_decomp_to_string(
+            decomp_string_from_hash(hash_val, base))
+        assert sort_char_string(in_str) == revert_string
+    print("Done. string_permu_hash works like a charm.")
