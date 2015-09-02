@@ -57,3 +57,14 @@ def decomp_string_from_hash(hashnum, base):
         if hashnum == 0:
             break
     return result_list_tuple
+
+def convert_decomp_to_string(list_tuple):
+    '''Take a list of tuples in form (char, num) that
+    represents the decomp of a string and back it out.
+    '''
+    result = []
+    for (char, num) in list_tuple:
+        result.append(char * num)
+    return ''.join(result)
+
+def
