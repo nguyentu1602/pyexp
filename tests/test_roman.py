@@ -117,5 +117,5 @@ class FromRomanBadInput(unittest.TestCase):
 
     def test_malformed_antecedents(self):
         for item in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
-                  'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+                     'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, item)
