@@ -83,6 +83,7 @@ def gen_random_word(length):
 def test_string_permu_hash(string_len=7, num_testcase=500):
     '''automatic roundtrip testing for hashing and de-hashing
     '''
+    # TODO: edge cases? max values?
     base = string_len + 1
     for i in range(num_testcase):
         in_str = gen_random_word(string_len)
@@ -91,3 +92,21 @@ def test_string_permu_hash(string_len=7, num_testcase=500):
             decomp_string_from_hash(hash_val, base))
         assert sort_char_string(in_str) == revert_string
     print("Done. string_permu_hash works like a charm.")
+
+'''now I have everything to make a smart slider through L -
+the given longer string. We will compute the hash_val once
+for the string of first len(S) chars, and then keep updating
+that hash value in O(1) as we slide.
+We updating the hash_val by adding hash contribution from
+of one more char from the right and subtracting hash
+contribution from the left most char that we drop.
+'''
+
+def update_hash_val(hash_val, pop_char, push_char, base):
+    '''helper function to update hash_val by popping and
+    pushing chars.
+    '''
+    # TODO: check range maybe
+    hash_val += base ** char_to_int(push_char)
+    hash_val -= base ** char_to_int(pop_char)
+    return hash_val
