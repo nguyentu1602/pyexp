@@ -110,3 +110,25 @@ def update_hash_val(hash_val, pop_char, push_char, base):
     hash_val += base ** char_to_int(push_char)
     hash_val -= base ** char_to_int(pop_char)
     return hash_val
+
+def sliding_permu_detect(short_str, long_str):
+    '''this is the heart of the smart sliding solution!
+    the special sliding function allows reducing complexity
+    from O(S * L) to O(L)
+    '''
+    slider_len = len(short_str)
+    base = slider_len + 1
+    # make a hash_val out of short_str to be compared
+    const_hash_val = string_permu_hash(short_str)
+    # TODO: check len(long_str)
+    moving_hash_val = string_permu_hash(long_str[:slider_len])
+    # repeatedly compare sliding hash_val to short_str's hash val
+    permu_count = int(moving_hash_val == const_hash_val)
+
+    for pos in range(slider_len, len(long_str)):
+        moving_hash_val = update_hash_val(moving_hash_val,
+                                          long_str[pos - slider_len],
+                                          long_str[pos],
+                                          base)
+        permu_count += (moving_hash_val == const_hash_val)
+    return permu_count
