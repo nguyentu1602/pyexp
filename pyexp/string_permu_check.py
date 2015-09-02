@@ -25,6 +25,11 @@ def int_to_char(num):
     return chr(num + SHIFT)
 
 def string_permu_hash(in_str):
+    '''hash a string based on the numbers of each char
+    in the string. So 2 permutations of a string give
+    the same hash. You can decompose this hash to get
+    back the number of each char.
+    '''
     base = len(in_str) + 1
     hash_result = 0
     for c in in_str:
