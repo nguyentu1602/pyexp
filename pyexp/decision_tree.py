@@ -1,4 +1,16 @@
 '''How to code decision tree from scratch?
+The original decision tree is proposed by JR Quinlan.
+Quinlan's implementation search for the best feature to split at each stage, therefore
+expensive.
+
+Adele Cutler proposes a random tree approach:
+http://www.interfacesymposia.org/I01/I2001Proceedings/ACutler/ACutler.pdf
+
+Adele's main idea:
+The feature i to split on at each level is determined randomly.
+It is not determined using information gain or correlation, etc.
+The split value for each node is determined by:
+Randomly selecting two samples of data and taking the mean of their Xi values.
 
 '''
 
