@@ -28,3 +28,41 @@ print(date_obj)
 # use the time module for unix time operation - e.g. return unix epoch and sleep. This is pretty much all it's good for
 tm.time()  # seconds since beginning of time - useful when calculating how much time a function takes
 
+# test features of the pytz package
+utc = tz.utc
+dir(utc)
+utc.dst(dt.datetime.now())  # should be zero for me since im in LDN
+now_with_tz = utc.localize(dt.datetime.now())
+print(now_with_tz)
+
+# print all timezones and get a few of them out:
+for tzz in tz.all_timezones:
+    print(tzz)
+eastern  = tz.timezone('US/Eastern')
+deutsche = tz.timezone('Europe/Berlin')
+ams      = tz.timezone('Europe/Amsterdam')
+chicago  = tz.timezone('US/Central')
+cet  = tz.timezone('CET')
+
+ldn      = tz.timezone('Europe/London')
+hkg      = tz.timezone('Asia/Hong_Kong')
+
+# midnight at ldn is AFTER midnight at hkg by x hours
+hkg_ldn_diff = dt.datetime(2019, 11, 11, tzinfo=ldn) - dt.datetime(2019, 11, 11, tzinfo=hkg)
+hkg_ldn_diff.total_seconds() / 60 / 60  # interesting that it returns 7.63 not 8!!!
+
+fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+# localized times - 1st way: build from strings:
+loc_dt = cet.localize(dt.datetime(2019, 11, 11, 6, 0, 0))
+
+# tzinfo doesn't work for many timezones:
+date_obj_ldn = dt.datetime(2019, 11, 11, 0, 0, 0, tzinfo=ldn)
+date_obj_ldn.astimezone(hkg)
+
+# The preferred way of dealing with times is to always work in UTC
+# converting to localtime only when generating output to be read by humans.
+utc_dt = dt.datetime(2002, 10, 27, 6, 0, 0, tzinfo=utc)
+loc_dt_to_print = utc_dt.astimezone(eastern)  # DO NOT DO ANY ARITHMETIC with this obj
+
+# read more here - it's a mess really - but no other way of dealing with it
+# http://pytz.sourceforge.net/

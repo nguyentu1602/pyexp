@@ -1,3 +1,6 @@
+"""
+practice advance read-write options & strategies with pandas
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -116,15 +119,7 @@ with pd.HDFStore(tmp_hdf5) as store:
     #
     # print("\nresult:\n%s" % pd.concat(l, keys = groups))
 
-
-
-
-
-
-
-
-
-# plotting
+# plotting - could be quite slow - moving here
 tdf[['Price']].plot(kind='line')
 plt.show()
 
