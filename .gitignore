@@ -7,3 +7,8 @@
 # cache folder
 __pycache__/
 pyexp/__pycache__/
+
+# idea file
+.idea
+.idea/*
+.idea/**
