@@ -9,4 +9,4 @@ I write these scripts out from several books, hence ideas are theirs and of cour
   5. Python for Data Analysis - Wes McKinney
   6. Python for Finance - Yves Hilpisch
   
-The module run tests with nose. To run test from the comand line, use ($nosetests -v) in the parent directory of the source.
+The module runs tests with nose. To run test from the comand line, use ($nosetests -v) in the parent directory of the source.

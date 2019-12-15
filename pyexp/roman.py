@@ -1,16 +1,21 @@
-'''Module to convert to and from Roman numerals.
+"""
+Module to convert to and from Roman numerals.
 Current range supported: 1-3999.
-'''
+"""
 import re
+
 
 class OutOfRangeError(ValueError):
     pass
 
+
 class NotIntegerError(ValueError):
     pass
 
+
 class InvalidRomanNumeralError(ValueError):
     pass
+
 
 ROMAN_NUMERAL_MAP = (('M', 1000),
                      ('CM', 900),
@@ -54,6 +59,7 @@ def to_roman(num_int):
             result += numeral
             num_int -= integer
     return result
+
 
 def from_roman(numeral_string):
     '''Convert Roman numeral to integer'''
