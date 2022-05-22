@@ -9,6 +9,9 @@ print(f"return code: {completed.returncode}")
 # Using an intermediate shell means that variables, glob patterns, and other special shell features in the command
 # string are processed before the comand is run
 
+# WARNING: USING SHELL=TRUE IS SERIOUS SECUIRTY RISK:
+# https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess
+
 shellProcess = subprocess.run("echo $HOME", shell=True)
 print(f"return code: {shellProcess.returncode}")
 

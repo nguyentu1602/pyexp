@@ -30,5 +30,10 @@ to have Python do only the heavy lifting in the middle. This allows for more mod
 tapping into the power of all that Python offers. Using stdin as a file object allows Python to read input, which is 
 piped to it from other commands, and writing to stdout allows it to continue passing the information through the piping system. 
 
-        
+
+#### Lesson 2: subprocess
+The module has 3 APIs for working with processes:
+1. The run() function, and its predecessor: call(), check_call() and check_output()
+2. The class Popen is a low-level API used to build the other APIs, used for more complex stuff. The ctor for Popen takes arguments to setup the new process so the parent can communicate with it via pipes.
+3. 
 
