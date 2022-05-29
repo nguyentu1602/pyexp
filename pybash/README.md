@@ -3,7 +3,7 @@
 -- ipython
 
 -- pickle
-
+    https://www.datacamp.com/tutorial/pickle-python-tutorial
 -- argparse
     https://pymotw.com/3/argparse/
 
@@ -15,6 +15,7 @@
 -- subprocess
     https://stackoverflow.com/questions/89228/how-do-i-execute-a-program-or-call-a-system-command
     https://stackoverflow.com/questions/4760215/running-shell-command-and-capturing-the-output
+
 -- multiprocessing
     http://pymotw.com/2/multiprocessing/basics.html
     http://pymotw.com/2/multiprocessing/communication.html
@@ -22,7 +23,7 @@
 -- os
 -- pathlib
     https://realpython.com/python-pathlib/
-    
+
 -- pdb
     https://doughellmann.com/posts/pymotw-pdb-interactive-debugger/
 
