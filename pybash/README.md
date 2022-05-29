@@ -1,5 +1,9 @@
 ### how to use python to replace bash as a scripting tool language?
 - Modules to master:
+-- ipython
+
+-- pickle
+
 -- argparse
     https://pymotw.com/3/argparse/
 
@@ -17,6 +21,8 @@
 
 -- os
 -- pathlib
+    https://realpython.com/python-pathlib/
+    
 -- pdb
     https://doughellmann.com/posts/pymotw-pdb-interactive-debugger/
 
