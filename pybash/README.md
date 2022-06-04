@@ -8,7 +8,9 @@
     https://pymotw.com/3/argparse/
 
 -- glob
-
+    Use Unix shell rules to find filenames matching a pattern.
+    https://pymotw.com/3/glob/index.html
+    
 -- ipython
 
 -- logging
