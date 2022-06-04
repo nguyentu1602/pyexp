@@ -4,14 +4,26 @@
 -- abc
     https://pymotw.com/3/abc/index.html
 
--- argparse
+-- advanced object oriented
+    https://livebook.manning.com/book/the-quick-python-book-second-edition/chapter-20/1
+
+-- argparse : DONE 
     https://pymotw.com/3/argparse/
 
--- glob
+-- datetime
+    https://pymotw.com/3/datetime/index.html
+
+
+-- glob: DONE
     Use Unix shell rules to find filenames matching a pattern.
     https://pymotw.com/3/glob/index.html
     
 -- ipython
+
+-- itertools
+
+-- json
+    https://pymotw.com/3/json/index.html
 
 -- logging
     https://pymotw.com/3/logging/index.html
@@ -24,23 +36,24 @@
 -- os
     https://pymotw.com/3/os/index.html
 
--- pathlib
+-- pathlib : DONE
     https://realpython.com/python-pathlib/
 
 -- pdb
     https://pymotw.com/3/pdb/index.html
     https://doughellmann.com/posts/pymotw-pdb-interactive-debugger/
 
--- pickle
+-- pickle : DONE
     https://www.datacamp.com/tutorial/pickle-python-tutorial
 
 -- pydoc
     https://pymotw.com/3/pydoc/index.html
 
 -- shutil
+    High-level file operations.
     https://pymotw.com/3/shutil/index.html
 
--- subprocess
+-- subprocess : DONE
     https://stackoverflow.com/questions/89228/how-do-i-execute-a-program-or-call-a-system-command
     
     https://stackoverflow.com/questions/4760215/running-shell-command-and-capturing-the-output
@@ -48,8 +61,7 @@
 -- sys
     https://pymotw.com/3/sys/index.html
 
--- advanced object oriented
-    https://livebook.manning.com/book/the-quick-python-book-second-edition/chapter-20/1
+-- time
 
 
 
