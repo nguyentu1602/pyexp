@@ -32,6 +32,9 @@
     http://pymotw.com/2/multiprocessing/basics.html
     http://pymotw.com/2/multiprocessing/communication.html
 
+-- numerical methods:
+    Book
+    https://pythonnumericalmethods.berkeley.edu/notebooks/chapter11.05-HDF5-Files.html
 
 -- os
     https://pymotw.com/3/os/index.html

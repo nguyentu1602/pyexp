@@ -128,3 +128,66 @@ print(shutil.which('no-such-program'))  # return none
 # example uses a readable bitmask and an alternate search path to find a configuration file.
 
 
+path = os.pathsep.join([
+    '.',
+    os.path.expanduser('~/git/pyexp/pybash'),
+])
+print(path)
+mode = os.F_OK | os.R_OK
+
+filename = shutil.which('README.md', mode=mode, path=path)
+print(filename)
+
+## EXAMPLE 8: Archives
+
+# list all available archive types:
+for format, des in shutil.get_archive_formats():
+    print(f'format: {format}: \t {des}')
+
+# use make_archive() to create a new archive file:     
+import tarfile
+import logging
+import sys
+
+# The logging module is configured to show messages from make_archive() about what it is doing.
+logging.basicConfig(format='%(message)s', stream=sys.stdout, level=logging.DEBUG)
+logger = logging.getLogger('shutil_examples')
+
+print('Creating archive:')
+shutil.make_archive('./tmp/example', 'gztar', root_dir='./tmp', base_dir='shutil_ex', logger=logger)
+
+print('\nArchive contents:')
+with tarfile.open('./tmp/example.tar.gz', 'r') as t:
+    for n in t.getnames():
+        print(n)
+
+
+# shutil maintains a registry of formats that can be unpacked on the current system, accessible
+# via get_unpack_formats().
+
+for format, exts, des in shutil.get_unpack_formats():
+    print(f'{format}\t: {des}, names ending in {exts}')
+
+# extract the archive with unpace_archive(), passing file name and optionally the dir where it 
+# should be extracted.
+import tempfile
+
+with tempfile.TemporaryDirectory() as d:
+    print('Unpacking Archive:')
+    shutil.unpack_archive('./tmp/example.tar.gz', extract_dir=d)
+    print('\nCreated:')
+    prefix_len = len(d) + 1
+    for extracted in pathlib.Path(d).rglob('*'):
+        print(str(extracted)[prefix_len:])
+
+## EXAMPLE 9: FILE SYSTEM SPACE:
+# .disk_usage()
+
+total_b, used_b, free_b = shutil.disk_usage('/')
+gib = 2 ** 30   # GIB = gibibyte
+gb  = 10 ** 9   # GB  = gigabyte
+
+print(f'total:\t {total_b  / gb:.1f} GB, {total_b / gib:.1f} GIB')
+print(f'used: \t {used_b  / gb:.1f} GB, {used_b / gib:.1f} GIB')
+print(f'free: \t {free_b  / gb:.1f} GB, {free_b / gib:.1f} GIB')
+
