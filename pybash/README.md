@@ -13,7 +13,6 @@
 -- datetime
     https://pymotw.com/3/datetime/index.html
 
-
 -- glob: DONE
     Use Unix shell rules to find filenames matching a pattern.
     https://pymotw.com/3/glob/index.html
@@ -25,9 +24,10 @@
 -- json
     https://pymotw.com/3/json/index.html
 
--- logging
+-- logging: DONE
     https://pymotw.com/3/logging/index.html
-
+    https://docs.python.org/3.7/library/logging.html
+    
 -- multiprocessing
     http://pymotw.com/2/multiprocessing/basics.html
     http://pymotw.com/2/multiprocessing/communication.html
@@ -52,7 +52,7 @@
 -- pydoc
     https://pymotw.com/3/pydoc/index.html
 
--- shutil
+-- shutil : DONE
     High-level file operations.
     https://pymotw.com/3/shutil/index.html
 
