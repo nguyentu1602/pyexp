@@ -2,6 +2,7 @@
 - Modules to master:
 
 -- abc
+    Define and use abstract base classes for interface verification.
     https://pymotw.com/3/abc/index.html
 
 -- advanced object oriented
@@ -9,6 +10,9 @@
 
 -- argparse : DONE 
     https://pymotw.com/3/argparse/
+
+-- collections:
+    https://pymotw.com/3/collections/index.html#module-collections
 
 -- datetime
     https://pymotw.com/3/datetime/index.html
@@ -27,7 +31,10 @@
 -- logging: DONE
     https://pymotw.com/3/logging/index.html
     https://docs.python.org/3.7/library/logging.html
-    
+
+-- math:
+    https://pymotw.com/3/math/index.html
+
 -- multiprocessing
     http://pymotw.com/2/multiprocessing/basics.html
     http://pymotw.com/2/multiprocessing/communication.html
@@ -55,6 +62,9 @@
 -- shutil : DONE
     High-level file operations.
     https://pymotw.com/3/shutil/index.html
+
+-- statistics : 
+    https://pymotw.com/3/statistics/index.html
 
 -- subprocess : DONE
     https://stackoverflow.com/questions/89228/how-do-i-execute-a-program-or-call-a-system-command
